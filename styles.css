@@ -1,0 +1,80 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --yellow: #f1be32;
+  --golden-yellow: #feac32;
+  --dark-purple: #0E4B5A;
+  --light-grey: #efefef;
+}
+
+body {
+  background-color: var(--dark-purple);
+  color: var(--light-grey);
+  text-align: center;
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Optional: for small screens */
+}
+
+input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 150px;
+}
+
+
+.disabled-style {
+  background-color: #fff;    
+  color: #000;               
+  opacity: 1;                
+}
+
+.btn {
+  padding: 9px 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+
+
+.liLine {
+  text-decoration: line-through;
+  color: red;
+}
+
+
+/* 
+.btn {
+  cursor: pointer;
+  padding: 10px;
+  margin: 10px;
+  color: var(--dark-purple);
+  background-color: var(--golden-yellow);
+  background-image: linear-gradient(#fecc4c, #ffac33);
+  border-color: var(--golden-yellow);
+  border-width: 3px;
+}
+
+.btn:hover {
+  background-image: linear-gradient(#ffcc4c, #f89808);
+} */
