@@ -92,6 +92,14 @@ var std1 = {
 
     console.log(std);
 
+    
+   document.getElementById("studentName").value="";
+   document.getElementById("studentAge").value=0;
+   document.getElementById("studentEmail").value="";
+   document.getElementById("studentCourse").value="";
+   
+
+
   }
 
   
@@ -124,36 +132,36 @@ var std1 = {
       if (std[i].id === id) {
         var student = std[i];
   
-        
         var newName = prompt("Enter new name:", student.name);
-        var newAge = prompt("Enter new age:", student.age);
+        var newAge = +prompt("Enter new age:", student.age);
         var newEmail = prompt("Enter new email:", student.email);
         var newCourse = prompt("Enter new course:", student.course);
         var newIsActive = prompt("Is the student active? (yes/no)", student.isActive ? "yes" : "no");
   
-        
-        if (newName !== null) student.name = newName;
-        if (newAge !== null) student.age = parseInt(newAge);
-        if (newEmail !== null) student.email = newEmail;
-        if (newCourse !== null) student.course = newCourse;
-        if (newIsActive !== null) student.isActive = newIsActive.toLowerCase() === "yes";
+        if (newName !== "" && newAge !== 0 && newEmail !== "" && newCourse !== "" && newIsActive !== "") {
+
+         
+          student.name = newName;
+          student.age = parseInt(newAge);
+          student.email = newEmail;
+          student.course = newCourse;
+          student.isActive = newIsActive.toLowerCase() === "yes";
   
-        
-        var row = document.getElementById("row-" + id);
-        if (row) {
-          row.cells[1].innerText = student.name;
-          row.cells[2].innerText = student.age;
-          row.cells[3].innerText = student.email;
-          row.cells[4].innerText = student.course;
-          row.cells[5].innerText = student.isActive ? "Yes" : "No";
+          var row = document.getElementById("row-" + id);
+          if (row) {
+            row.cells[1].innerText = student.name;
+            row.cells[2].innerText = student.age;
+            row.cells[3].innerText = student.email;
+            row.cells[4].innerText = student.course;
+            row.cells[5].innerText = student.isActive ? "Yes" : "No";
   
-        
-          if (!student.isActive) {
-            row.style.color = "red";
-            row.style.textDecoration = "line-through"
-          } else {
-            row.style.color = ""; 
-            row.style.textDecoration = "none"
+            if (!student.isActive) {
+              row.style.color = "red";
+              row.style.textDecoration = "line-through";
+            } else {
+              row.style.color = "";
+              row.style.textDecoration = "none";
+            }
           }
         }
   
